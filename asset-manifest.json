@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bird-licence/static/css/main.2305a552.css",
+    "main.js": "/bird-licence/static/js/main.0f3377cb.js",
+    "index.html": "/bird-licence/index.html",
+    "main.2305a552.css.map": "/bird-licence/static/css/main.2305a552.css.map",
+    "main.0f3377cb.js.map": "/bird-licence/static/js/main.0f3377cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2305a552.css",
+    "static/js/main.0f3377cb.js"
+  ]
+}

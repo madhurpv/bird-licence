@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/bird-licence/static/css/main.f40bf2fb.css",
-    "main.js": "/bird-licence/static/js/main.eeac7675.js",
+    "main.css": "/bird-licence/static/css/main.0e0dffc9.css",
+    "main.js": "/bird-licence/static/js/main.6e2d297d.js",
     "index.html": "/bird-licence/index.html",
-    "main.f40bf2fb.css.map": "/bird-licence/static/css/main.f40bf2fb.css.map",
-    "main.eeac7675.js.map": "/bird-licence/static/js/main.eeac7675.js.map"
+    "main.0e0dffc9.css.map": "/bird-licence/static/css/main.0e0dffc9.css.map",
+    "main.6e2d297d.js.map": "/bird-licence/static/js/main.6e2d297d.js.map"
   },
   "entrypoints": [
-    "static/css/main.f40bf2fb.css",
-    "static/js/main.eeac7675.js"
+    "static/css/main.0e0dffc9.css",
+    "static/js/main.6e2d297d.js"
   ]
 }

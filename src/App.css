@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap");
+
+/* ===== THEME VARIABLES ===== */
+.app.dark {
+  --bg: #0a0d14;
+  --bg2: #111520;
+  --bg3: #181d2e;
+  --surface: #1c2236;
+  --surface2: #222840;
+  --border: rgba(120, 160, 255, 0.12);
+  --border2: rgba(120, 160, 255, 0.22);
+  --text: #e8eaf6;
+  --text2: #9ba3c4;
+  --text3: #5c6382;
+  --accent: #5b8cff;
+  --accent2: #a78bfa;
+  --accent3: #34d399;
+  --gold: #f0c040;
+  --gold2: #fde68a;
+  --danger: #f87171;
+  --glow: rgba(91, 140, 255, 0.18);
+  --glow2: rgba(167, 139, 250, 0.14);
+  --feather1: rgba(91, 140, 255, 0.08);
+  --feather2: rgba(167, 139, 250, 0.06);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app.light {
+  --bg: #f0f4ff;
+  --bg2: #e8edf8;
+  --bg3: #dde4f5;
+  --surface: #ffffff;
+  --surface2: #f5f7ff;
+  --border: rgba(60, 90, 200, 0.12);
+  --border2: rgba(60, 90, 200, 0.22);
+  --text: #1a1f3a;
+  --text2: #4a5280;
+  --text3: #8890b0;
+  --accent: #3060e0;
+  --accent2: #7c3aed;
+  --accent3: #059669;
+  --gold: #d97706;
+  --gold2: #f59e0b;
+  --danger: #dc2626;
+  --glow: rgba(48, 96, 224, 0.1);
+  --glow2: rgba(124, 58, 237, 0.08);
+  --feather1: rgba(48, 96, 224, 0.05);
+  --feather2: rgba(124, 58, 237, 0.04);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ===== RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: "Syne", sans-serif;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===== APP WRAPPER ===== */
+.app {
+  min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Ambient background glow */
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% -10%, var(--glow)  0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 110%, var(--glow2) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
 }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }

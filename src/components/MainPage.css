@@ -1,0 +1,78 @@
+.main-page {
+  display: flex;
+  height: calc(100vh - 64px); /* fill remaining height under header */
+  position: relative;
+  z-index: 1;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: 52px 48px;
+  overflow-y: auto;
+}
+
+.panel-left {
+  flex: 0 0 50%;
+  max-width: 50%;
+  background: var(--bg);
+}
+
+.panel-right {
+  flex: 0 0 50%;
+  max-width: 50%;
+  background: var(--bg2);
+  border-left: 1px solid var(--border);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile divider — hidden on desktop */
+.divider {
+  display: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .main-page {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 64px);
+  }
+
+  .panel-left,
+  .panel-right {
+    flex: unset;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .panel-right {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    min-height: 520px;
+  }
+
+  .panel {
+    padding: 32px 20px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+    background: var(--bg);
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .divider-icon {
+    color: var(--accent);
+    font-size: 12px;
+  }
+}

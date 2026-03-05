@@ -1,0 +1,187 @@
+.dropzone {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  min-height: 460px;
+  border: 2px dashed var(--border2);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  background: var(--surface);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+  border-color: var(--accent);
+  background: var(--surface2);
+  box-shadow: 0 0 40px var(--glow), inset 0 0 40px var(--feather1);
+}
+
+.dropzone.dragging {
+  border-style: solid;
+  transform: scale(1.02);
+}
+
+.dropzone-input {
+  /* Full-size invisible overlay — the input IS the tap/click target.
+     Never use display:none for file inputs on mobile; programmatic
+     .click() is unreliable on iOS Safari and many Android browsers. */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Decorative floating feathers */
+.dz-feather {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.18;
+  pointer-events: none;
+  animation: float-feather 6s ease-in-out infinite;
+}
+
+.dz-feather-1 { top: 12%; left: 8%; animation-delay: 0s; transform: rotate(-30deg); }
+.dz-feather-2 { top: 60%; right: 6%; animation-delay: 2s; transform: rotate(40deg); }
+.dz-feather-3 { bottom: 12%; left: 14%; animation-delay: 4s; transform: rotate(15deg); }
+
+@keyframes float-feather {
+  0%, 100% { transform: translateY(0) rotate(-30deg); }
+  50%       { transform: translateY(-12px) rotate(-20deg); }
+}
+.dz-feather-2 { animation-name: float-feather-2; }
+@keyframes float-feather-2 {
+  0%, 100% { transform: translateY(0) rotate(40deg); }
+  50%       { transform: translateY(10px) rotate(50deg); }
+}
+.dz-feather-3 { animation-name: float-feather-3; }
+@keyframes float-feather-3 {
+  0%, 100% { transform: translateY(0) rotate(15deg); }
+  50%       { transform: translateY(-8px) rotate(25deg); }
+}
+
+/* Content */
+.dz-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 32px 24px;
+  z-index: 1;
+}
+
+/* Bird icon with rings */
+.dz-bird-icon {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dz-bird-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--border2);
+  animation: expand-ring 3s ease-in-out infinite;
+}
+
+.dz-ring-2 {
+  inset: -14px;
+  opacity: 0.5;
+  animation-delay: 1s;
+}
+
+@keyframes expand-ring {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%       { transform: scale(1.05); opacity: 0.3; }
+}
+
+.dz-bird-emoji {
+  font-size: 48px;
+  filter: drop-shadow(0 4px 12px var(--glow));
+  animation: float-bird 4s ease-in-out infinite;
+}
+
+@keyframes float-bird {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%       { transform: translateY(-6px) rotate(-3deg); }
+  75%       { transform: translateY(4px) rotate(2deg); }
+}
+
+.dropzone.dragging .dz-bird-emoji {
+  animation: none;
+  transform: scale(1.2) translateY(-8px);
+  transition: transform 0.2s ease;
+}
+
+.dz-title {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dz-subtitle {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+.dz-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dz-formats {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: var(--text3);
+  background: var(--bg3);
+  border-radius: 20px;
+  padding: 6px 14px;
+  letter-spacing: 0.08em;
+}
+
+.dz-dot {
+  color: var(--text3);
+  opacity: 0.4;
+}
+
+.dz-error {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: var(--danger);
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.dz-tip {
+  font-size: 12px;
+  color: var(--text3);
+  background: var(--bg3);
+  border-radius: 8px;
+  padding: 8px 14px;
+}

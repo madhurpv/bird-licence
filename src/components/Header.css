@@ -1,0 +1,96 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 64px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+/* ── Brand (left) ── */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.header-logo {
+  font-size: 28px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px var(--glow));
+}
+
+.header-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.header-title {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.header-subtitle {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Tagline (centre) ── */
+.header-tagline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text2);
+  font-style: italic;
+  letter-spacing: 0.01em;
+  /* hide on small screens */
+}
+
+.header-tag-badge {
+  font-size: 8px;
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* ── Actions (right) ── */
+.header-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .header-tagline {
+    display: none;
+  }
+  .site-header {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-subtitle {
+    display: none;
+  }
+  .header-title {
+    font-size: 16px;
+  }
+}
